@@ -6,7 +6,7 @@ const orm = {
 
     //Select entire table
     selectAll: function(tableName) {
-        connection.query("SELECT * FROM ??" + tableName + ";", function(err, res) {
+        connection.query("SELECT * FROM " + tableName + ";", function(err, res) {
             if (err) throw err;
             console.log(res);
         });
