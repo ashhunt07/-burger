@@ -1,3 +1,17 @@
+body {
+    background-image: url(../images/food.png);
+    background-repeat: repeat;
+}
+
+.jumbotron {
+    background-color: #111D1D;
+}
+
+h1,
+h3 {
+    color: #fff;
+}
+
 .burgerOrder {
     max-width: 900px;
     width: 100%;
@@ -5,15 +19,28 @@
 }
 
 .burgerImg {
-    width: 20%;
+    width: 15%;
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
+.add-btn {
+    background-color: #E69138;
+    color: #fff;
+}
+
 .ordered {
     width: 50%;
     float: left;
+}
+
+.getDevoured {
+    margin-bottom: 1.5em;
+}
+
+.getDelete {
+    margin-bottom: 1.5em;
 }
 
 .devoured {

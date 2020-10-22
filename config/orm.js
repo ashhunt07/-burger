@@ -45,15 +45,11 @@ let orm = {
         console.log(queryString)
 
         connection.query(queryString, function(err, res) {
-                if (err) { throw err; }
-                console.log(res);
-                cb(res);
-            })
-            // connection.query("SELECT * FROM " + table + ";", function(err, res) {
-            //     if (err) throw err;
-            //     console.log(res);
-            //     cb(res);
-            // });
+            if (err) { throw err; }
+            console.log(res);
+            cb(res);
+        })
+
     },
 
     //Insert item into table
@@ -79,29 +75,43 @@ let orm = {
     },
 
 
-    // create: function(table, cols, vals, cb) {
-    //     connection.query("INSERT INTO " + table + " (" + cols + ") VALUES (" + vals + ");", function(err, res) {
-    //         if (err) throw err;
-    //         console.log(res);
-
-    //         cb(res);
-    //     });
-    // },
-
-
-
-
-
     //Update element in table
-    update: function(table, condition, id, cb) {
-        connection.query("UPDATE" + table + "SET" + condition + "WHERE" + id + "= ?", function(err, res) {
-            if (err) throw err;
-            console.log(res);
+    update: function(table, objColVals, condition, cb) {
+        var queryString = "UPDATE " + table;
+
+        queryString += " SET ";
+        queryString += objToSql(objColVals);
+        queryString += " WHERE ";
+        queryString += condition;
+
+        console.log(queryString);
+        connection.query(queryString, function(err, res) {
+            if (err) {
+                throw err;
+            }
+
 
             cb(res);
         });
     },
-}
+
+
+
+    //Remove element from table
+    delete: function(table, condition, cb) {
+        let queryString = "DELETE FROM " + table;
+        queryString += " WHERE ";
+        queryString += condition;
+
+        connection.query(queryString, function(err, res) {
+            if (err) {
+                throw err;
+            }
+
+            cb(res);
+        });
+    },
+};
 
 // Export the orm object for the model (burger.js)
 module.exports = orm;

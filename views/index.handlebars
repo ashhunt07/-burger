@@ -1,29 +1,30 @@
 <div class="jumbotron justify-content-center">
+    
+    <h1 class="title display-4 text-center my-2">Eat-Da-Burger!</h1>
+    
     {{!-- Burger Header Image --}}
     <img class="burgerImg" src="/assets/images/burger.png" alt="Giant Burger">
 
-    <h1 class="display-4 text-center my-2">Eat-Da-Burger!</h1>
-</div>
 
-<div class="burgerOrder">
+    <h3 class="text-center my-4">Add a Burger</h3>
+    
+    <form class="create-form text-center">
 
-    <h2>Add a Burger</h2>
-    <form class="create-form">
-
-    <div class="formBurger form-group justify-content-center col-12">
-        <label for="newBurger">New Burger:</label>
-        {{!-- <textarea class="form-control" id="burgerEntry" rows="3"></textarea> --}}
-        <input type="text" id="burger-name" name="burger_name" rows="3">
+    <div class="formBurger form-group justify-content-center text-center mx-auto col-6">
+        <textarea class="form-control" id="burger-name" name="burger_name" rows="3"></textarea>
+        {{!-- <input type="text" id="burger-name" name="burger_name" rows="3"> --}}
     </div>
 
     <button type="submit" class="btn add-btn">Order Burger</button>
     </form>
+</div>
 
+<div class="burgerOrder">
 
     {{!-- Burgers not eaten --}}
     <div class="ordered">
     <h3>Added to Order</h2>
-        <ul>
+        <ul class= "toEat">
         {{#each burgers}}
             {{#unless devoured}}
                 {{> burgers/burger-block devoured=false}}
@@ -36,10 +37,10 @@
     <div class="devoured">
     <h3>Devoured</h2>
 
-        <ul>
+        <ul class ="eating">
         {{#each burgers}}
             {{#if devoured}}
-                {{> burgers/burger-block devoured=true}}
+                {{> burgers/burger-block-delete devoured=true}}
             {{/if}}
         {{/each}}
         </ul>
