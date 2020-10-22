@@ -3,19 +3,29 @@ body {
     background-repeat: repeat;
 }
 
-.jumbotron {
-    background-color: #111D1D;
+.wrapper {
+    overflow: auto;
+    padding-bottom: 5em;
 }
 
-h1,
-h3 {
+.jumbotron {
+    background-color: #0c1218;
+}
+
+h1 {
+    font-family: 'Press Start 2P', cursive;
     color: #fff;
 }
 
-.burgerOrder {
-    max-width: 900px;
-    width: 100%;
-    margin: 0 auto;
+h3 {
+    color: #0c1218;
+    margin-top: 1em;
+}
+
+textarea,
+#burger-name {
+    text-align: center;
+    font-size: 2em;
 }
 
 .burgerImg {
@@ -30,20 +40,37 @@ h3 {
     color: #fff;
 }
 
+.burgerOrder {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 20em;
+}
+
 .ordered {
     width: 50%;
     float: left;
 }
 
 .getDevoured {
-    margin-bottom: 1.5em;
-}
-
-.getDelete {
-    margin-bottom: 1.5em;
+    margin: 1.5em 5% 0 0;
+    border: 0px none;
+    background-color: #0961c5;
+    color: #fff;
+    border-radius: 3px;
+    padding: .5em 5%;
 }
 
 .devoured {
     width: 50%;
     float: left;
+}
+
+.getDelete {
+    margin: 1.5em 2% 0 0;
+    border: 0px none;
+    background-color: #0961c5;
+    color: #fff;
+    border-radius: 3px;
+    padding: .5em 5%;
 }
