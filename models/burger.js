@@ -1,29 +1,28 @@
 //Requirements
 // Import the ORM to create functions that will interact with the database.
-const orm = require("../config/orm.js");
+let orm = require("../config/orm");
 
 //Input burger information into ORM functions
-const burger = {
+let burger = {
 
-    selectAll: function(cb) {
-        orm.selectAll("burgers", function(res) {
+    all: function(cb) {
+        orm.all("burgers", function(res) {
             cb(res);
         });
     },
 
-    insertOne: function(value, cb) {
-        orm.insertOne("burgers", value, function(res) {
+    create: function(cols, vals, cb) {
+        orm.create("burgers", cols, vals, function(res) {
             cb(res);
         });
     },
 
-    updateOne: function(condition, id, cb) {
-        condition = "devoured = true"
-        orm.updateOne("burgers", condition, id, function(res) {
+    update: function(objColVals, condition, cb) {
+        orm.update("burgers", objColVals, condition, function(res) {
             cb(res);
         });
     },
 }
 
 
-module.exports = burger;
+module.exports = burger

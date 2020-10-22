@@ -1,8 +1,8 @@
-INSERT INTO burgers (burger_name, devoured) 
-    VALUES ('Avacado Chicken Burger', 'false');
+USE burgers_db;
 
 INSERT INTO burgers (burger_name, devoured) 
-    VALUES ('Bacon Burger', 'false');
+    VALUES 
+    ('Avacado Chicken Burger', false),
+    ('Bacon Burger', true),
+    ('Triple Cheese Burger', false)
 
-INSERT INTO burgers (burger_name, devoured) 
-    VALUES ('Triple Cheese Burger', 'false');

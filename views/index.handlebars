@@ -1,9 +1,8 @@
 <div class="jumbotron justify-content-center">
     {{!-- Burger Header Image --}}
-    <img src="/public/assets/img/burger.png" alt="Giant Burger">
+    <img class="burgerImg" src="/assets/images/burger.png" alt="Giant Burger">
 
     <h1 class="display-4 text-center my-2">Eat-Da-Burger!</h1>
-
 </div>
 
 <div class="burgerOrder">
@@ -14,7 +13,7 @@
     <div class="formBurger form-group justify-content-center col-12">
         <label for="newBurger">New Burger:</label>
         {{!-- <textarea class="form-control" id="burgerEntry" rows="3"></textarea> --}}
-        <input type="text" id="burger-name" name="name" rows="3">
+        <input type="text" id="burger-name" name="burger_name" rows="3">
     </div>
 
     <button type="submit" class="btn add-btn">Order Burger</button>
@@ -27,7 +26,7 @@
         <ul>
         {{#each burgers}}
             {{#unless devoured}}
-            {{> burgers/burger devoured=true}}
+                {{> burgers/burger-block devoured=false}}
             {{/unless}}
         {{/each}}
         </ul>
@@ -40,7 +39,7 @@
         <ul>
         {{#each burgers}}
             {{#if devoured}}
-            {{> burgers/burger devoured=false}}
+                {{> burgers/burger-block devoured=true}}
             {{/if}}
         {{/each}}
         </ul>
